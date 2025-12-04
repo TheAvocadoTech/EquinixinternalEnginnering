@@ -8,7 +8,7 @@ const routes = [
     icon: (
       <img src="/icons/dashboard.svg" alt="Dashboard" className={iconClasses} />
     ),
-    name: "Dashboard",
+    name: "Home",
   },
 
   {
@@ -16,20 +16,20 @@ const routes = [
     icon: (
       <img src="/icons/companies.svg" alt="Dashboard" className={iconClasses} />
     ),
-    name: "Companies",
+    name: "Sheet",
   },
-  {
-    path: "/app/visitor", // Changed from /register and added /app prefix
-    icon: (
-      <img src="/icons/visitor.svg" alt="Dashboard" className={iconClasses} />
-    ),
-    name: "Vistor",
-  },
-  {
-    path: "/app/idmanagment",
-    icon: <img src="/icons/ID.svg" alt="Dashboard" className={iconClasses} />,
-    name: "ID Management",
-  },
+  // {
+  //   path: "/app/visitor", // Changed from /register and added /app prefix
+  //   icon: (
+  //     <img src="/icons/visitor.svg" alt="Dashboard" className={iconClasses} />
+  //   ),
+  //   name: "Vistor",
+  // },
+  // {
+  //   path: "/app/idmanagment",
+  //   icon: <img src="/icons/ID.svg" alt="Dashboard" className={iconClasses} />,
+  //   name: "ID Management",
+  // },
   // {
   //   path: "", //no url needed as this has submenu
   //   icon: <Cog6ToothIcon className={`${iconClasses} inline`} />, // icon component
