@@ -27,7 +27,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-white flex flex-col lg:flex-row">
       {/* LEFT: Image area
           - On mobile: Show second.svg at 50% height
           - On large screens: Show login.jpg at 70% width and full-height
@@ -46,7 +46,7 @@ export default function Login() {
         <img
           src="/logo.svg"
           alt="Decorative preview"
-          className="w-auto h-96 md:h-48 object-contain lg:hidden"
+          className="w-auto h-80 mt-2 md:h-48 object-contain lg:hidden"
         />
         {/* Desktop: login.jpg */}
         <img
@@ -69,7 +69,7 @@ export default function Login() {
           lg:h-screen lg:overflow-hidden
         "
       >
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-md mt-16">
           {/* Logo */}
           <div className="mb-6 lg:mb-8">
             <div className="flex items-center gap-3 mb-4">
