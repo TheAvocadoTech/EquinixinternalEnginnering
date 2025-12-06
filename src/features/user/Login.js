@@ -45,7 +45,7 @@ export default function Login() {
         <img
           src="/logo.svg"
           alt="Decorative preview"
-          className="w-full h-full object-cover lg:hidden"
+          className="w-auto h-96 md:h-48 object-contain lg:hidden"
         />
         {/* Desktop: login.jpg */}
         <img
@@ -139,12 +139,6 @@ export default function Login() {
             >
               {loading ? "Signing in..." : "Sign in"}
             </button>
-
-            <div className="text-center mt-2">
-              <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-                Forgot your password?
-              </a>
-            </div>
           </div>
         </div>
       </div>
