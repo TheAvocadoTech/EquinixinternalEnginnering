@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const INITIAL_LOGIN_OBJ = { password: "", emailId: "" };
@@ -6,32 +7,40 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState("");
   const [loginObj, setLoginObj] = useState(INITIAL_LOGIN_OBJ);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const submitForm = (e) => {
-    e.preventDefault();
+    // If called from onClick, e is the click event; from form submit it would be submit event.
+    if (e && e.preventDefault) e.preventDefault();
+
     setErrorMessage("");
-    if (loginObj.emailId.trim() === "")
+    if (loginObj.emailId.trim() === "") {
       return setErrorMessage("Email Id is required!");
-    if (loginObj.password.trim() === "")
+    }
+    if (loginObj.password.trim() === "") {
       return setErrorMessage("Password is required!");
+    }
+
     setLoading(true);
-    // Note: localStorage is not available in Claude artifacts
-    // In a real app, you would use: localStorage.setItem("token", "DummyTokenHere");
+    // Example: set token in localStorage (uncomment in real app)
+    // localStorage.setItem("token", "DummyTokenHere");
+
+    // Your navigate call — call the function returned from useNavigate.
     setLoading(false);
-    window.location.href = "/app/welcome";
+    navigate("/app/dashboard");
   };
 
   const updateFormValue = (field, value) => {
     setErrorMessage("");
-    setLoginObj({ ...loginObj, [field]: value });
+    setLoginObj((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") submitForm(e);
   };
 
   return (
     <div className="min-h-screen bg-white flex flex-col lg:flex-row">
-      {/* LEFT: Image area
-          - On mobile: Show second.svg at 50% height
-          - On large screens: Show login.jpg at 70% width and full-height
-      */}
       <div
         className="
           w-full h-96 md:h-64 lg:h-screen
@@ -42,13 +51,11 @@ export default function Login() {
         "
         aria-hidden="true"
       >
-        {/* Mobile: second.svg */}
         <img
           src="/logo.svg"
           alt="Decorative preview"
           className="w-auto h-80 mt-2 md:h-48 object-contain lg:hidden"
         />
-        {/* Desktop: login.jpg */}
         <img
           src="/login.jpg"
           alt="Decorative preview"
@@ -56,10 +63,6 @@ export default function Login() {
         />
       </div>
 
-      {/* RIGHT: Form area
-          - On small/medium screens this is full width below the image and scrollable if needed
-          - On large screens this is a centered fixed panel taking 30% width and full height (no page scroll)
-      */}
       <div
         className="
           w-full lg:w-[30%]
@@ -70,7 +73,6 @@ export default function Login() {
         "
       >
         <div className="w-full max-w-md mt-16">
-          {/* Logo */}
           <div className="mb-6 lg:mb-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="flex gap-1">
@@ -92,7 +94,6 @@ export default function Login() {
             </p>
           </div>
 
-          {/* Form */}
           <div className="space-y-4">
             <div>
               <label className="block text-sm text-gray-600 mb-2">Login</label>
@@ -115,7 +116,7 @@ export default function Login() {
                   value={loginObj.password}
                   onChange={(e) => updateFormValue("password", e.target.value)}
                   placeholder="Enter password"
-                  onKeyPress={(e) => e.key === "Enter" && submitForm(e)}
+                  onKeyDown={handleKeyDown}
                   className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200"
                 />
                 <button
