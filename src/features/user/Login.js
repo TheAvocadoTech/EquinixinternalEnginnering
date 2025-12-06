@@ -34,10 +34,11 @@ export default function Login() {
       */}
       <div
         className="
-          w-full h-[50vh] lg:h-screen
+          w-full h-96 md:h-64 lg:h-screen
           lg:w-[70%]
           flex-shrink-0
           overflow-hidden
+          flex items-center justify-center
         "
         aria-hidden="true"
       >
