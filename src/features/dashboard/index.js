@@ -89,7 +89,7 @@ function Dashboard() {
     <div className="min-h-screen ">
       {/* Header */}
       <div className=" border-b border-gray-200 px-6 py-4">
-        <h1 className="text-xl font-semibold text-gray-800">Home</h1>
+        <h1 className="text-xl font-semibold text-gray-600 ">Home</h1>
       </div>
 
       {/* Cards Grid */}
@@ -112,10 +112,10 @@ function Dashboard() {
                   <span className="text-sm text-gray-600">Previous:</span>
                   <span className="w-2 h-2 bg-red-500 rounded-full"></span>
                 </div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-black font-bold">
                   Date: {card.previousDate}
                 </p>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-black font-bold">
                   Engineer Name: {card.previousEngineer}
                 </p>
               </div>
@@ -126,10 +126,10 @@ function Dashboard() {
                   <span className="text-sm text-gray-600">Updated:</span>
                   <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                 </div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-black font-bold">
                   Date: {card.updatedDate}
                 </p>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-black font-bold">
                   Engineer Name: {card.updatedEngineer}
                 </p>
               </div>
