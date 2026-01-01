@@ -102,34 +102,39 @@ function Dashboard() {
             >
               {/* Card Header */}
               <div className="flex justify-between items-start mb-4">
-                <h3 className="font-semibold text-gray-900">{card.name}</h3>
-                <span className="text-xs text-gray-500">{card.time}</span>
-              </div>
+                <h3 className="font-semibold text-[#2D2D2D] text-2xl">
+                  {card.name}
+                </h3>
 
+                <span className="text-xs text-[#2D2D2D] pt-2">{card.time}</span>
+              </div>
+              <hr className=" mt-4 mb-4 text-black " />
               {/* Previous Section */}
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-sm text-gray-600">Previous:</span>
+                  <span className="text-sm text-[#2D2D2D]">Previous:</span>
                   <span className="w-2 h-2 bg-red-500 rounded-full"></span>
                 </div>
-                <p className="text-sm text-black font-bold">
+                <p className="text-sm text-[#2D2D2D] font-semibold">
                   Date: {card.previousDate}
                 </p>
-                <p className="text-sm text-black font-bold">
+                <p className="text-sm text-[#2D2D2D] font-semibold">
                   Engineer Name: {card.previousEngineer}
                 </p>
               </div>
-
+              <hr className=" mt-6 mb-3 " />
               {/* Updated Section */}
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-sm text-gray-600">Updated:</span>
+                  <span className="text-sm text-[#2D2D2D] font-semibold">
+                    Updated:
+                  </span>
                   <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                 </div>
-                <p className="text-sm text-black font-bold">
+                <p className="text-sm text-[#2D2D2D] font-bold">
                   Date: {card.updatedDate}
                 </p>
-                <p className="text-sm text-black font-bold">
+                <p className="text-sm text-[#2D2D2D] font-semibold">
                   Engineer Name: {card.updatedEngineer}
                 </p>
               </div>

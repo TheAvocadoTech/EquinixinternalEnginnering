@@ -5,8 +5,10 @@
 @layer base {
   body {
     font-family: 'Instrument Sans', sans-serif;
+    background-color: #f9fafb; /* gray-50 */
   }
 }
+
 
 .loading-indicator:before {
     content: '';
@@ -35,4 +37,12 @@
     width: 120px;
     height: 120px;
     animation: spin 2s linear infinite;
+}
+.menu li > a:hover {
+  background-color: #ef4444 !important; /* red-500 */
+  color: white !important;
+}.menu li > a.active,
+.menu li > a.menu-active {
+  background-color: #ef4444 !important; /* red-500 */
+  color: white !important;
 }

@@ -51,25 +51,13 @@ function LeftSidebar() {
                 <NavLink
                   end
                   to={route.path}
-                  className={({ isActive }) =>
-                    `group flex items-center gap-3 px-4 py-3 rounded-lg mx-2 transition-all duration-200
-      ${
-        isActive
-          ? "bg-red-500 shadow-md hover:bg-red-600 text-white"
-          : "text-gray-700 hover:bg-red-500 hover:text-white"
-      }
-    `
-                  }
+                  className="group flex items-center gap-3 px-4 py-3 rounded-lg mx-2
+             transition-all duration-200
+             text-gray-700
+             hover:!bg-red-500 hover:!text-white"
                 >
-                  {/* icon */}
-                  <span className="text-lg transition-all group-hover:text-white">
-                    {route.icon}
-                  </span>
-
-                  {/* label */}
-                  <span className="text-sm transition-all group-hover:text-white">
-                    {route.name}
-                  </span>
+                  <span className="text-lg text-red-500">{route.icon}</span>
+                  <span className="text-sm">{route.name}</span>
                 </NavLink>
               )}
             </li>
