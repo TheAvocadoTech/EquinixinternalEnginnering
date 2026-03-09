@@ -4,11 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import BellIcon from "@heroicons/react/24/outline/BellIcon";
 import Bars3Icon from "@heroicons/react/24/outline/Bars3Icon";
 import MagnifyingGlassIcon from "@heroicons/react/24/outline/MagnifyingGlassIcon";
-import Squares2X2Icon from "@heroicons/react/24/outline/Squares2X2Icon";
-import ChevronDownIcon from "@heroicons/react/24/outline/ChevronDownIcon";
 import { openRightDrawer } from "../features/common/rightDrawerSlice";
 import { RIGHT_DRAWER_TYPES } from "../utils/globalConstantUtil";
-import { NavLink, Routes, Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header() {
   const dispatch = useDispatch();
@@ -47,9 +45,14 @@ function Header() {
 
   return (
     <>
-      <div className="navbar sticky top-0 bg-white z-10 shadow-sm border-b border-gray-200 px-6 h-[5rem]">
-        {/* Left Section - Menu toggle and Search */}
+      <div className="navbar sticky top-0 bg-white z-10 shadow-sm border-b border-gray-200 px-6 h-[4.5rem]">
+        {/* <div className="hidden lg:block h-20 w-px mr-4 bg-gray-200 " /> */}
+        {/* Left Section - Logo, Divider, Menu toggle and Search */}
         <div className="flex-1 flex items-center gap-4">
+          {/* Equinix Logo with border box */}
+
+          {/* Vertical Divider Line after Logo */}
+
           {/* Mobile menu toggle */}
           <label
             htmlFor="left-sidebar-drawer"
@@ -73,7 +76,7 @@ function Header() {
 
               {/* Keyboard Shortcut Hint */}
               <div className="flex items-center gap-1.5 ml-2 text-gray-400 select-none">
-                {/* Windows Icon - using a simple SVG for accuracy */}
+                {/* Windows Icon */}
                 <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
                   <path d="M0 3.449L9.75 2.1V11.59H0V3.449zm0 8.851h9.75v9.439L0 20.351V12.3zm10.65-10.42L24 0v11.59h-13.35V1.88zm0 10.42H24V24l-13.35-1.928V12.3z" />
                 </svg>
@@ -121,10 +124,16 @@ function Header() {
 
               {/* Filled Down Arrow */}
               <svg
-                className="w-6 h-6 text-gray-800 fill-current"
-                viewBox="0 0 20 20"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                <path
+                  d="M13.5101 15.1999L15.4801 13.2299L18.6901 10.0199C19.3601 9.33993 18.8801 8.17993 17.9201 8.17993L11.6901 8.17993L6.0801 8.17993C5.1201 8.17993 4.6401 9.33993 5.3201 10.0199L10.5001 15.1999C11.3201 16.0299 12.6801 16.0299 13.5101 15.1999Z"
+                  fill="#2D2D2D"
+                />
               </svg>
             </label>
 
@@ -133,17 +142,6 @@ function Header() {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow-xl bg-white rounded-xl w-52 border border-gray-100 z-[1]"
             >
-              <li>
-                <Link to="/app/settings-profile" className="py-3 font-medium">
-                  Profile Settings
-                </Link>
-              </li>
-              <li>
-                <Link to="/app/settings-billing" className="py-3 font-medium">
-                  Bill History
-                </Link>
-              </li>
-              <div className="divider my-1"></div>
               <li>
                 <a
                   onClick={logoutUser}
